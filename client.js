@@ -7,9 +7,15 @@ const connect = function() {
   });
   // confirming connection to server
   conn.on('connect', function() {
-    console.log("Successfully connected to game server");
+    console.log('Successfully connected to game server');
+    conn.write("Name: @@@");
+    setTimeout(() => {
+      conn.write("Move: left");
+    }, 50);
+    setInterval(() => {
+      conn.write("Move: down");
+    }, 50);
   });
-  conn.write("Name: @@@");
 
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
