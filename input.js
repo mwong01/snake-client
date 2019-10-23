@@ -35,6 +35,11 @@ const handleUserInput = function(key) {
     moves = "Move: right";
   }
 
+// add a custom message
+  if (key === "q") {
+    moves = "Say: fun guy"
+  }
+
   connection.write(moves);
 
 };
